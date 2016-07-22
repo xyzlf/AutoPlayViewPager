@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- banner indicator -->
+    <declare-styleable name="AutoPagerIndicator">
+        <attr name="indicator_radius" format="dimension" />
+        <attr name="indicator_span" format="dimension" />
+        <attr name="indicator_unselected_color" format="color" />
+        <attr name="indicator_selected_color" format="color" />
+    </declare-styleable>
+
+
+</resources>
