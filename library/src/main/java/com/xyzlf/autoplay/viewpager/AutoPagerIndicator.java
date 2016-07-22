@@ -60,7 +60,7 @@ public class AutoPagerIndicator extends LinearLayout {
 
             // indicator 选中颜色
             mSelectedColor = arr.getColor(R.styleable.AutoPagerIndicator_indicator_selected_color, mSelectedColor);
-            // indicator 未选中颜色
+            // indicator unselected color
             mUnSelectedColor = arr.getColor(R.styleable.AutoPagerIndicator_indicator_unselected_color, mUnSelectedColor);
             arr.recycle();
         }
