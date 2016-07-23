@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
 
     }
 
-    private class AutoPlayPagerAdapter extends AutoPagerAdapter {
+    public class AutoPlayPagerAdapter extends AutoPagerAdapter {
 
         private List<Integer> list;
 

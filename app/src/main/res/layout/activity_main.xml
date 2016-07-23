@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="使用封装集合CustomerBanner"
+            android:text="自动轮播Viewpager"
             android:textColor="#333333"
             android:textSize="16sp"/>
 
