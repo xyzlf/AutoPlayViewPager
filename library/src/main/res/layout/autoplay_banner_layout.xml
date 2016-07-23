@@ -7,7 +7,7 @@
     <com.xyzlf.autoplay.viewpager.AutoPlayViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 
     <com.xyzlf.autoplay.viewpager.AutoPagerIndicator
         android:id="@+id/indicator"

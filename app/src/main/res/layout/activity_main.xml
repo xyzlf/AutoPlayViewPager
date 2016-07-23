@@ -22,39 +22,12 @@
         <com.xyzlf.autoplay.viewpager.CustomerBanner
             android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="150dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:padding="10dp"
-            android:text="自定义Indicator 颜色 大小"
-            android:textColor="#333333"
-            android:textSize="16sp"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <com.xyzlf.autoplay.viewpager.AutoPlayViewPager
-                android:id="@+id/main_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"/>
-
-            <com.xyzlf.autoplay.viewpager.AutoPagerIndicator
-                android:id="@+id/main_indicator"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/main_viewpager"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                custom:indicator_radius="3dp"
-                custom:indicator_span="16dp"
-                custom:indicator_selected_color="#ff0000"
-                custom:indicator_unselected_color="#00ff00"/>
-
-        </RelativeLayout>
+            android:layout_height="150dp"
+            custom:indicator_radius="3dp"
+            custom:indicator_span="16dp"
+            custom:indicator_selected_color="#ff0000"
+            custom:indicator_unselected_color="#00ff00"
+            custom:indicator_bottommargin="30dp"/>
 
     </LinearLayout>
 </ScrollView>

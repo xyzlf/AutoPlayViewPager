@@ -68,13 +68,42 @@ public class AutoPagerIndicator extends LinearLayout {
         mLittleDotSize = (int) (mDotSpan / 2 + mDotRadius * 2);
     }
 
+    public final void setAttrs(float mDotRadius) {
+        this.setAttrs(mDotRadius, mDotSpan);
+    }
+
+    public final void setAttrs(float mDotRadius, int mDotSpan) {
+        this.setAttrs(mDotRadius, mDotSpan, mSelectedColor);
+    }
+
+    public final void setAttrs(float mDotRadius, int mDotSpan, int mSelectedColor) {
+        this.setAttrs(mDotRadius, mDotSpan, mSelectedColor, mUnSelectedColor);
+    }
+
+    public final void setAttrs(float mDotRadius, int mDotSpan, int mSelectedColor, int mUnSelectedColor) {
+
+        this.mDotRadius = mDotRadius;
+        this.mDotSpan = mDotSpan;
+        this.mSelectedColor = mSelectedColor;
+        this.mUnSelectedColor = mUnSelectedColor;
+
+        mLittleDotSize = (int) (mDotSpan / 2 + mDotRadius * 2);
+    }
+
+    public void setmDotClickHandler(OnDotClickHandler mOnDotClickHandler) {
+        this.mOnDotClickHandler = mOnDotClickHandler;
+    }
+
     public final void setAdapter(AutoPagerAdapter adapter) {
         if (null == adapter) {
             setVisibility(GONE);
             return;
         }
         this.adapter = adapter;
-        int count = adapter.getDataCount();
+        generateDot(adapter.getDataCount());
+    }
+
+    private void generateDot(int count) {
         if (count <= 1) {
             setVisibility(GONE);
             return;
@@ -112,10 +141,6 @@ public class AutoPagerIndicator extends LinearLayout {
             ((LittleDot) getChildAt(index)).setColor(mSelectedColor);
         }
         mCurrent = index;
-    }
-
-    public void setmDotClickHandler(OnDotClickHandler mOnDotClickHandler) {
-        this.mOnDotClickHandler = mOnDotClickHandler;
     }
 
     private OnClickListener mDotClickHandler = new OnClickListener() {

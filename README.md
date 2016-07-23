@@ -13,14 +13,26 @@
 # 使用方式
 
 1、在xml中使用，如下：
-
+	
+	<!-- 使用默认颜色，大小，间距 -->
     <com.xyzlf.autoplay.viewpager.CustomerBanner
 	    android:id="@+id/banner"
 	    android:layout_width="match_parent"
 	    android:layout_height="150dp"/>
 
+	<!--自定义颜色，大小，间距-->
+	<com.xyzlf.autoplay.viewpager.CustomerBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        custom:indicator_radius="3dp"
+        custom:indicator_span="16dp"
+        custom:indicator_selected_color="#ff0000"
+        custom:indicator_unselected_color="#00ff00"
+        custom:indicator_bottommargin="20dp"/>
 
-   代码中使用：
+
+2、代码中使用：
 
 	List<Integer> list = new ArrayList<>();
     list.add(R.drawable.pic_1);
@@ -30,58 +42,6 @@
         
     CustomerBanner banner = (CustomerBanner) findViewById(R.id.banner);
     banner.setAdapter(new AutoPlayPagerAdapter(list));
-
-<img src="autoplay_view.gif" />
-
-2、自定义indicator的大小，间距，颜色，在xml使用：
-
-	<RelativeLayout
-		android:layout_width="match_parent"
-		android:layout_height="150dp">
-		
-		<com.xyzlf.autoplay.viewpager.AutoPlayViewPager
-		    android:id="@+id/main_viewpager"
-		    android:layout_width="match_parent"
-		    android:layout_height="150dp"/>
-		
-		<com.xyzlf.autoplay.viewpager.AutoPagerIndicator
-		    android:id="@+id/main_indicator"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_alignBottom="@+id/main_viewpager"
-		    android:layout_centerHorizontal="true"
-		    android:layout_marginBottom="10dp"
-		    custom:indicator_radius="3dp"
-		    custom:indicator_span="16dp"
-		    custom:indicator_selected_color="#ff0000"
-		    custom:indicator_unselected_color="#00ff00"/>	
-	</RelativeLayout>
-
-   代码中使用：
-
-	/** 自定义indicator大小，颜色 **/
-    final AutoPlayViewPager viewPager = (AutoPlayViewPager) findViewById(R.id.main_viewpager);
-    final AutoPagerIndicator indicator = (AutoPagerIndicator) findViewById(R.id.main_indicator);
-    AutoPagerAdapter adapter = new AutoPlayPagerAdapter(list);
-    viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            indicator.onPageSelected(position);
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    });
-    viewPager.setAdapter(adapter);
-    indicator.setAdapter(adapter);
-    viewPager.startPlay(adapter.getDataCount());
 
 
 3、Adapter代码如下：

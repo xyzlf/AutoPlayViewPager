@@ -3,7 +3,6 @@ package com.xyzlf.viewpager.demo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,6 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.xyzlf.autoplay.viewpager.AutoPagerAdapter;
-import com.xyzlf.autoplay.viewpager.AutoPagerIndicator;
-import com.xyzlf.autoplay.viewpager.AutoPlayViewPager;
 import com.xyzlf.autoplay.viewpager.CustomerBanner;
 
 import java.util.ArrayList;
@@ -41,34 +38,8 @@ public class MainActivity extends Activity {
         list.add(R.drawable.pic_3);
         list.add(R.drawable.pic_4);
 
-        /** 简单粗暴使用方式 **/
         CustomerBanner banner = (CustomerBanner) findViewById(R.id.banner);
         banner.setAdapter(new AutoPlayPagerAdapter(list));
-
-        /** 自定义indicator大小，颜色 **/
-        final AutoPlayViewPager viewPager = (AutoPlayViewPager) findViewById(R.id.main_viewpager);
-        final AutoPagerIndicator indicator = (AutoPagerIndicator) findViewById(R.id.main_indicator);
-        AutoPagerAdapter adapter = new AutoPlayPagerAdapter(list);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                indicator.onPageSelected(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-        viewPager.setAdapter(adapter);
-        indicator.setAdapter(adapter);
-        viewPager.startPlay(adapter.getDataCount());
-
     }
 
     public class AutoPlayPagerAdapter extends AutoPagerAdapter {
