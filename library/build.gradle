@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -54,7 +54,7 @@ publish {
     userOrg = localBintrayUser
     groupId = 'com.'+ localBintrayUser +'.autoplay.viewpager'//jcenter上的路径
     artifactId = 'viewpager'//项目名称
-    publishVersion = '0.0.1'//版本号
+    publishVersion = '0.0.3'//版本号
     desc = 'Auto play viewpager.'
     website = 'https://github.com/xyzlf/AutoPlayViewPager'
 }

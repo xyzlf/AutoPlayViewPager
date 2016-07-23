@@ -1,12 +1,12 @@
 # AutoPlayViewPager
-仿京东、淘宝，自动轮播图。Auto Play ViewPager。
+仿京东、淘宝，横向自动轮播图。Auto Play ViewPager。
 
 # 效果
 <img src="autoplay_view.gif" />
 
 # Gradle
 	//使用 autoplay viewpager
-	compile ('com.xyzlf.autoplay.viewpager:viewpager:0.0.1') {
+	compile ('com.xyzlf.autoplay.viewpager:viewpager:0.0.3') {
 	    exclude group: 'com.android.support', module: 'appcompat-v7'
 	}
 
@@ -44,7 +44,7 @@
     banner.setAdapter(new AutoPlayPagerAdapter(list));
 
 
-3、Adapter代码如下：
+3、Adapter需要继承 **AutoPagerAdapter**，完整Adapter代码如下：
 
 	public class AutoPlayPagerAdapter extends AutoPagerAdapter {
 

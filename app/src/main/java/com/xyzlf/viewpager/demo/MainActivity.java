@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.ImageView;
 
@@ -38,7 +39,15 @@ public class MainActivity extends Activity {
         list.add(R.drawable.pic_3);
         list.add(R.drawable.pic_4);
 
-        CustomerBanner banner = (CustomerBanner) findViewById(R.id.banner);
+        final CustomerBanner banner = (CustomerBanner) findViewById(R.id.banner);
+        banner.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+
+                banner.getWidth();
+                return false;
+            }
+        });
         banner.setAdapter(new AutoPlayPagerAdapter(list));
     }
 
