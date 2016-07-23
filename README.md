@@ -84,7 +84,7 @@
     viewPager.startPlay(adapter.getDataCount());
 
 
-Adapter代码如下：
+3、Adapter代码如下：
 
 	public class AutoPlayPagerAdapter extends AutoPagerAdapter {
 
