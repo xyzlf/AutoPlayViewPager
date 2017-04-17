@@ -6,7 +6,7 @@
 
 # Gradle
 	//使用 autoplay viewpager
-	compile ('com.xyzlf.autoplay.viewpager:viewpager:0.0.4') {
+	compile ('com.xyzlf.autoplay.viewpager:viewpager:0.0.5') {
 	    exclude group: 'com.android.support', module: 'appcompat-v7'
 	}
 
