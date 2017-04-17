@@ -3,7 +3,7 @@ apply plugin: 'com.novoda.bintray-release'//添加
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         minSdkVersion 16
@@ -54,7 +54,7 @@ publish {
     userOrg = localBintrayUser
     groupId = 'com.'+ localBintrayUser +'.autoplay.viewpager'//jcenter上的路径
     artifactId = 'viewpager'//项目名称
-    publishVersion = '0.0.3'//版本号
+    publishVersion = '0.0.4'//版本号
     desc = 'Auto play viewpager.'
     website = 'https://github.com/xyzlf/AutoPlayViewPager'
 }
